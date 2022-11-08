@@ -10,34 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace supermarket
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaktionslogik für Home.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Home : Window
     {
-        public MainWindow()
+        public Home()
         {
             InitializeComponent();
-        }
-
-        private void UserName_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Pass_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void LogIn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

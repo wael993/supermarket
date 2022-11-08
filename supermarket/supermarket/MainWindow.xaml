@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:supermarket"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Uper Marke" Height="290" Width="500">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="F:\Arbeit\projekt\Markt_Logo.png" Grid.RowSpan="5" Margin="-61,9,214,2" Grid.ColumnSpan="2" Grid.Row="1" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Welcome in Uper Markt" VerticalAlignment="Top"  HorizontalAlignment="Center"  FontSize="23" FontWeight="Bold" Foreground="#0FDC0F" />
+        <WrapPanel Grid.Row="2" Grid.Column="1" >
+            <TextBlock  Text="User Name"  Width="124" FontSize="22"  FontWeight="Medium" Foreground="#626C62"/>
+            <TextBox x:Name="UserName" FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" GotFocus="UserName_GotFocus" Width="203"/>
+        </WrapPanel >
+        <WrapPanel Grid.Row="3" Grid.Column="1">
+            <TextBlock  Text="Pass Word"  Width="124" FontSize="22" FontWeight="Medium" Foreground="#626C62"/>
+            <TextBox x:Name="Pass"  FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" GotFocus="Pass_GotFocus" Width="203"  />
+        </WrapPanel>
+        <Button Grid.Column="1" x:Name="LogIn" Grid.Row="4" Content="Login"  FontSize="26" FontWeight="Bold" Background="#0FDC0F" Foreground="#626C62" BorderThickness="0"  Margin="20,0,20,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LogIn_Click"/>
+
     </Grid>
 </Window>

@@ -26,11 +26,12 @@
             <TextBlock  Text="User Name"  Width="124" FontSize="22"  FontWeight="Medium" Foreground="#626C62"/>
             <TextBox x:Name="UserName" FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" GotFocus="UserName_GotFocus" Width="203"/>
         </WrapPanel >
-        <WrapPanel Grid.Row="3" Grid.Column="1">
-            <TextBlock  Text="Pass Word"  Width="124" FontSize="22" FontWeight="Medium" Foreground="#626C62"/>
-            <TextBox x:Name="Pass"  FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" GotFocus="Pass_GotFocus" Width="203"  />
-        </WrapPanel>
-        <Button Grid.Column="1" x:Name="LogIn" Grid.Row="4" Content="Login"  FontSize="26" FontWeight="Bold" Background="#0FDC0F" Foreground="#626C62" BorderThickness="0"  Margin="20,0,20,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LogIn_Click"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Pass Word" FontSize="22" FontWeight="Medium" Foreground="#626C62" Margin="0,0,257,0"/>
+        <PasswordBox Grid.Row="3" Grid.Column="1" PasswordChar="•" x:Name="Pass"  FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" GotFocus="Pass_GotFocus" Margin="124,0,41,12"  PasswordChanged="Pass_PasswordChanged" />
+        <TextBox Grid.Row="3" Grid.Column="1" Name="PasswordUnmask" Visibility="Hidden" Margin="125,0,0,13" HorizontalAlignment="Left" Width="202" />
 
+
+        <Button Grid.Column="1" x:Name="LogIn" Grid.Row="4" Content="Login"  FontSize="26" FontWeight="Bold" Background="#0FDC0F" Foreground="#626C62" BorderThickness="0"  Margin="20,0,20,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LogIn_Click"/>
+        <CheckBox  Content="Showpass" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"></CheckBox>
     </Grid>
 </Window>

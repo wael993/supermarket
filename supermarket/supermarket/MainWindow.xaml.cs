@@ -39,5 +39,22 @@ namespace supermarket
         {
 
         }
+
+        private void Pass_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PasswordUnmask.Text = Pass.Password;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            PasswordUnmask.Visibility = Visibility.Visible;
+            Pass.Visibility = Visibility.Hidden;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            PasswordUnmask.Visibility = Visibility.Hidden;
+            Pass.Visibility = Visibility.Visible;
+        }
     }
 }

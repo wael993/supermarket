@@ -13,3 +13,5 @@ F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\supermarket.csproj.Ge
 F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\supermarket.csproj.CoreCompileInputs.cache
 F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\supermarket.exe
 F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\supermarket.pdb
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\Home.g.cs
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\Home.baml

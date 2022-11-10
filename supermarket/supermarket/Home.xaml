@@ -7,6 +7,32 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.RowSpan="2" Grid.ColumnSpan="4" Background="#0BD6FA" Opacity="0.85" />
+        <TextBlock Text="Home Page" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="2" Text="Welcome in Uper Markt" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+
+        <Button Grid.Column="0" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0">
+            <StackPanel>
+                <Image Source="F:\Arbeit\projekt\images (2).png"></Image>
+                <TextBlock Foreground="Red">hgfjhg</TextBlock>
+            </StackPanel>
+        </Button>
         
+        
+        <Button Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0"/>
+        <Button Grid.Column="2" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0"/>
+        <Button Grid.Column="3" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0"/>
     </Grid>
 </Window>

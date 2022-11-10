@@ -20,6 +20,7 @@ namespace supermarket
     /// </summary>
     public partial class MainWindow : Window
     {
+        Home home = new Home();
         public MainWindow()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace supermarket
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
-
+            home.Show();
         }
 
         private void Pass_PasswordChanged(object sender, RoutedEventArgs e)

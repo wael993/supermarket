@@ -32,6 +32,9 @@
 
 
         <Button Grid.Column="1" x:Name="LogIn" Grid.Row="4" Content="Login"  FontSize="26" FontWeight="Bold" Background="#0FDC0F" Foreground="#626C62" BorderThickness="0"  Margin="20,0,20,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LogIn_Click"/>
-        <CheckBox  Content="Showpass" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"></CheckBox>
+        <CheckBox  Content="Show Password" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Margin="1,1,10,1"></CheckBox>
+
+        <TextBlock Text="Made by: Wael Zobani" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="1,1,10,1"/>
+
     </Grid>
 </Window>

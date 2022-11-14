@@ -23,5 +23,20 @@ namespace supermarket
         {
             InitializeComponent();
         }
+
+        private void New_Billing_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LV_New_Billing_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Bestellung_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

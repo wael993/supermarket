@@ -63,7 +63,7 @@
     </Grid>
 
 
-        <Grid x:Name="New_Billing_Grid">
+        <Grid x:Name="New_Billing_Grid" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -103,9 +103,9 @@
 
 
             </Grid>
-            
-            
-            <ListView Grid.Row="2"  Grid.Column="0" BorderThickness="2"
+
+
+            <ListView Grid.Row="2"  Grid.Column="0" BorderThickness="2" Margin="2,5,20,2"
                   x:Name="LV_New_Billing" 
                   IsSynchronizedWithCurrentItem="True"
                   ItemsSource="{Binding }" SelectedIndex="1"
@@ -127,15 +127,14 @@
             </ListView>
 
 
-
             <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition  Height="6*"/>
+                    <RowDefinition  Height="4*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-            <DataGrid Grid.Row="0" 
+            <DataGrid Grid.Row="0" Background="Transparent"
                 ItemsSource="{Binding }"
                       Name="Bestellung"
                       AutoGenerateColumns="False"
@@ -149,7 +148,7 @@
                 </DataGrid.Columns>
             </DataGrid>
                 <StackPanel Grid.Row="1">
-                    <Button  Content="Finish"  Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Width="120"/>
+                    <Button  Content="Finish"  Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Width="120" Margin="5"/>
                 <WrapPanel>
                         <TextBlock Text="Total:" Margin="5,0" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
                 <TextBlock x:Name="Rechnungskosten"/>
@@ -159,5 +158,60 @@
 
             </Grid>
         </Grid>
-    </Grid>
+
+
+        <Grid x:Name="Employees_Mang_Grid" Visibility="Visible">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#0BD6FA" Opacity="0.85" />
+            <TextBlock Text="Employees Mange" Grid.Column="0" Grid.ColumnSpan="2" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBlock Grid.Column="2" Text="Welcome in Uper Markt" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Name" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" Margin="40,0,0,0" />
+            <TextBox Grid.Row="2" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom"  Margin="40,0,0,0"  />
+
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Phone" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" Margin="40,0,0,0"/>
+            <TextBox Grid.Row="2" Grid.Column="1" FontSize="19" VerticalContentAlignment="Bottom"  Margin="40,0,0,0"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="Address" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" Margin="40,0,0,0"/>
+            <TextBox Grid.Row="2" Grid.Column="2" FontSize="19" VerticalContentAlignment="Bottom" Margin="40,0,0,0"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="Password" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" Margin="40,0,0,0"/>
+            <TextBox Grid.Row="2" Grid.Column="3" FontSize="19" VerticalContentAlignment="Bottom" Margin="40,0,10,0"/>
+
+
+            <Button  Content="Save" Grid.Row="3" Grid.Column="0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Margin="20,5,20,0"/>
+            <Button Content="Edit" Grid.Row="3" Grid.Column="1" Margin="20,5,20,0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+            <Button Content="Delete" Grid.Row="3" Grid.Column="2" Margin="20,5,20,0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+            <Button Content="Clear" Grid.Row="3" Grid.Column="3" Margin="20,5,20,0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+
+
+            <DataGrid Grid.Row="4" Grid.ColumnSpan="4"
+                      Background="Transparent"
+                ItemsSource="{Binding }"
+                    
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      MouseDoubleClick="Bestellung_MouseDoubleClick">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="EmpID" Binding="{Binding Speise.Produkt_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Speise.Produkt_Name}" Width="*"/>
+                    <DataGridTextColumn Header="Phone" Binding="{Binding Anzahl}" Width="*"/>
+                    <DataGridTextColumn Header="Address" Binding="{Binding Speise.Preis}" Width="*"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Speise.Preis}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        </Grid>
 </Window>

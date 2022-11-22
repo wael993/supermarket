@@ -43,7 +43,7 @@
             </StackPanel>
         </Button>
         
-        <Button Grid.Column="2" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0">
+        <Button x:Name="Items_Mang" Grid.Column="2" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0" Click="Items_Mang_Click">
             <StackPanel>
                 <Image Source="F:\Arbeit\projekt\Items.png" Height="99" Width="99"/>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -161,7 +161,7 @@
         </Grid>
 
 
-        <Grid x:Name="Employees_Mang_Grid" Visibility="Visible">
+        <Grid x:Name="Employees_Mang_Grid" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -214,5 +214,62 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        </Grid>
+ 
+
+
+    <Grid x:Name="Item_Mang_Grid" Visibility="Visible">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#0BD6FA" Opacity="0.85" />
+        <TextBlock Text="Item Mange" Grid.Column="0" Grid.ColumnSpan="2" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        <Button Grid.Column="2" Content="Welcome in Uper Markt" FontSize="26" Background="Transparent" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" BorderThickness="0" Margin="0,0,10,0" Click="Home_Click"/>
+
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Name" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" Margin="40,0,0,0" />
+        <TextBox Grid.Row="2" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom"  Margin="40,0,0,0"  />
+
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="Price" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" Margin="40,0,0,0"/>
+        <TextBox Grid.Row="2" Grid.Column="1" FontSize="19" VerticalContentAlignment="Bottom"  Margin="40,0,0,0"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="Quantity" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" Margin="40,0,0,0"/>
+        <TextBox Grid.Row="2" Grid.Column="2" FontSize="19" VerticalContentAlignment="Bottom" Margin="40,0,0,0"/>
+       
+
+        <Button  Content="Save" Grid.Row="3" Grid.Column="0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Margin="20,5,20,0"/>
+        <Button Content="Edit" Grid.Row="3" Grid.Column="1" Margin="20,5,20,0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+        <Button Content="Delete" Grid.Row="3" Grid.Column="2" Margin="20,5,20,0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+        <Button Content="Clear" Grid.Row="3" Grid.Column="3" Margin="20,5,20,0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
+
+
+        <DataGrid Grid.Row="4" Grid.ColumnSpan="4"
+                      Background="Transparent"
+                ItemsSource="{Binding }"
+                    
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      MouseDoubleClick="Bestellung_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ItemID" Binding="{Binding Speise.Produkt_ID}" Width="*"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Speise.Produkt_Name}" Width="*"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Anzahl}" Width="*"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Speise.Preis}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+    </Grid>
+
+
+
 </Window>

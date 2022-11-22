@@ -65,6 +65,14 @@ namespace supermarket {
         #line hidden
         
         
+        #line 46 "..\..\Home.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button Items_Mang;
+        
+        #line default
+        #line hidden
+        
+        
         #line 66 "..\..\Home.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid New_Billing_Grid;
@@ -100,6 +108,14 @@ namespace supermarket {
         #line 164 "..\..\Home.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Employees_Mang_Grid;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 220 "..\..\Home.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Grid Item_Mang_Grid;
         
         #line default
         #line hidden
@@ -156,9 +172,18 @@ namespace supermarket {
             #line hidden
             return;
             case 4:
-            this.New_Billing_Grid = ((System.Windows.Controls.Grid)(target));
+            this.Items_Mang = ((System.Windows.Controls.Button)(target));
+            
+            #line 46 "..\..\Home.xaml"
+            this.Items_Mang.Click += new System.Windows.RoutedEventHandler(this.Items_Mang_Click);
+            
+            #line default
+            #line hidden
             return;
             case 5:
+            this.New_Billing_Grid = ((System.Windows.Controls.Grid)(target));
+            return;
+            case 6:
             
             #line 80 "..\..\Home.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Home_Click);
@@ -166,7 +191,7 @@ namespace supermarket {
             #line default
             #line hidden
             return;
-            case 6:
+            case 7:
             this.LV_New_Billing = ((System.Windows.Controls.ListView)(target));
             
             #line 113 "..\..\Home.xaml"
@@ -175,7 +200,7 @@ namespace supermarket {
             #line default
             #line hidden
             return;
-            case 7:
+            case 8:
             this.Bestellung = ((System.Windows.Controls.DataGrid)(target));
             
             #line 143 "..\..\Home.xaml"
@@ -184,13 +209,13 @@ namespace supermarket {
             #line default
             #line hidden
             return;
-            case 8:
+            case 9:
             this.Rechnungskosten = ((System.Windows.Controls.TextBlock)(target));
             return;
-            case 9:
+            case 10:
             this.Employees_Mang_Grid = ((System.Windows.Controls.Grid)(target));
             return;
-            case 10:
+            case 11:
             
             #line 181 "..\..\Home.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Home_Click);
@@ -198,9 +223,28 @@ namespace supermarket {
             #line default
             #line hidden
             return;
-            case 11:
+            case 12:
             
             #line 207 "..\..\Home.xaml"
+            ((System.Windows.Controls.DataGrid)(target)).MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.Bestellung_MouseDoubleClick);
+            
+            #line default
+            #line hidden
+            return;
+            case 13:
+            this.Item_Mang_Grid = ((System.Windows.Controls.Grid)(target));
+            return;
+            case 14:
+            
+            #line 237 "..\..\Home.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Home_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 15:
+            
+            #line 263 "..\..\Home.xaml"
             ((System.Windows.Controls.DataGrid)(target)).MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.Bestellung_MouseDoubleClick);
             
             #line default

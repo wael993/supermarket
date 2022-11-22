@@ -38,6 +38,7 @@ namespace supermarket
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
+            Close();
             home.Show();
         }
 

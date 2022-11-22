@@ -23,10 +23,25 @@ namespace supermarket
         {
             InitializeComponent();
         }
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            Employees_Mang_Grid.Visibility = Visibility.Hidden;
+            Home_Grid.Visibility = Visibility.Visible;
+            New_Billing_Grid.Visibility = Visibility.Hidden;
+        }
 
         private void New_Billing_Click(object sender, RoutedEventArgs e)
         {
+            Employees_Mang_Grid.Visibility = Visibility.Hidden;
+            Home_Grid.Visibility = Visibility.Hidden;
+            New_Billing_Grid.Visibility = Visibility.Visible;
 
+        }
+        private void Employees_Mang_Click(object sender, RoutedEventArgs e)
+        {
+            Home_Grid.Visibility = Visibility.Hidden;
+            New_Billing_Grid.Visibility = Visibility.Hidden;
+            Employees_Mang_Grid.Visibility = Visibility.Visible;
         }
 
         private void LV_New_Billing_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -38,5 +53,7 @@ namespace supermarket
         {
 
         }
+
+      
     }
 }

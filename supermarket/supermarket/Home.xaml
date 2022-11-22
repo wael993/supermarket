@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
     <Grid>
-        <Grid x:Name="Home_Grid" Visibility="Visible">
+        <Grid x:Name="Home_Grid" Visibility="Hidden">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -34,7 +34,7 @@
         </Button>
 
 
-        <Button Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0">
+            <Button x:Name="Employees_Mang" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0" Click="Employees_Mang_Click">
             <StackPanel>
                 <Image Source="F:\Arbeit\projekt\Employee.png" Height="99" Width="99"/>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -76,7 +76,8 @@
             </Grid.RowDefinitions>
             <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#0BD6FA" Opacity="0.85" />
             <TextBlock Text="New Billing" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Center" Margin="10,0,0,0"/>
-            <TextBlock Grid.Column="2" Text="Welcome in Uper Markt" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+            <!--<TextBlock Grid.Column="2" Text="Welcome in Uper Markt" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,10,0"/>-->
+            <Button Grid.Column="2" Content="Welcome in Uper Markt" FontSize="26" Background="Transparent" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" BorderThickness="0" Margin="0,0,10,0" Click="Home_Click"/>
 
             <Grid Grid.Row="1" Grid.Column="0" Margin="20,0,0,0">
                 <Grid.ColumnDefinitions>
@@ -160,7 +161,7 @@
         </Grid>
 
 
-        <Grid x:Name="Employees_Mang_Grid" Visibility="Hidden">
+        <Grid x:Name="Employees_Mang_Grid" Visibility="Visible">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -177,7 +178,7 @@
             </Grid.RowDefinitions>
             <Border Grid.Row="0" Grid.ColumnSpan="4" Background="#0BD6FA" Opacity="0.85" />
             <TextBlock Text="Employees Mange" Grid.Column="0" Grid.ColumnSpan="2" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Center" Margin="10,0,0,0"/>
-            <TextBlock Grid.Column="2" Text="Welcome in Uper Markt" FontSize="26" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+            <Button Grid.Column="2" Content="Welcome in Uper Markt" FontSize="26" Background="Transparent" FontWeight="Medium" Foreground="Snow" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.ColumnSpan="2" BorderThickness="0" Margin="0,0,10,0" Click="Home_Click"/>
 
 
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Name" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" Margin="40,0,0,0" />

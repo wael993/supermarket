@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
     <Grid>
-        <Grid x:Name="Home_Grid" Visibility="Hidden">
+        <Grid x:Name="Home_Grid" Visibility="Visible">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -60,7 +60,8 @@
                 </TextBlock>
             </StackPanel>
         </Button>
-    </Grid>
+            <TextBlock Grid.Row="3" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="Made by Wael Zobani"/>
+        </Grid>
 
 
         <Grid x:Name="New_Billing_Grid" Visibility="Hidden">
@@ -217,7 +218,7 @@
  
 
 
-    <Grid x:Name="Item_Mang_Grid" Visibility="Visible">
+    <Grid x:Name="Item_Mang_Grid" Visibility="Hidden">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

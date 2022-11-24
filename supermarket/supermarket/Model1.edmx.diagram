@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="667477d131854ea79310d291132ee524" Name="Diagram1">
-        <EntityTypeShape EntityType="supermarketModel_1.Billing" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="supermarketModel_1.Customer" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="supermarketModel_1.Employees" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="supermarketModel_1.Item" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="supermarketModel_1.Orders" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
+      <Diagram DiagramId="667477d131854ea79310d291132ee524" Name="Diagram1" ZoomLevel="103">
+        <EntityTypeShape EntityType="supermarketModel_1.Billing" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="supermarketModel_1.Customer" Width="1.5" PointX="3.375" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="supermarketModel_1.Employees" Width="1.5" PointX="6.125" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="supermarketModel_1.Item" Width="1.5" PointX="4.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="supermarketModel_1.Orders" Width="1.5" PointX="8.375" PointY="3" IsExpanded="true" />
         <AssociationConnector Association="supermarketModel_1.fk_Customer" ManuallyRouted="false" />
         <AssociationConnector Association="supermarketModel_1.fk_Employees" ManuallyRouted="false" />
         <AssociationConnector Association="supermarketModel_1.fk_Item_ID" ManuallyRouted="false" />

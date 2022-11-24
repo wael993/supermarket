@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,16 @@ namespace supermarket
     /// </summary>
     public partial class Home : Window
     {
+        private ICollectionView icollectionwiew ;
+        supermarketEntities ctx = new supermarketEntities();
         public Home()
         {
             InitializeComponent();
+            ctx.Billing.Load();
+            icollectionwiew = CollectionViewSource.GetDefaultView(ctx.Billing.Local);
+
+
+
         }
         private void Home_Click(object sender, RoutedEventArgs e)
         {

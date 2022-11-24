@@ -22,7 +22,7 @@
 
         <Image Source="F:\Arbeit\projekt\Markt_Logo.png" Grid.RowSpan="5" Margin="-63,9,214,2" Grid.ColumnSpan="2" Grid.Row="1" />
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Welcome in Uper Markt" VerticalAlignment="Top"  HorizontalAlignment="Center"  FontSize="23" FontWeight="Bold" Foreground="#0FDC0F" />
-        <WrapPanel Grid.Row="2" Grid.Column="1" >
+        <WrapPanel Grid.Row="2" Grid.Column="1">
             <TextBlock  Text="User Name"  Width="124" FontSize="22"  FontWeight="Medium" Foreground="#626C62"/>
             <TextBox x:Name="UserName" FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" GotFocus="UserName_GotFocus" Width="203"/>
         </WrapPanel >

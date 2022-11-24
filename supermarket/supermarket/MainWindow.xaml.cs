@@ -38,8 +38,19 @@ namespace supermarket
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
-            Close();
-            home.Show();
+            using(supermarketEntities SPE =new supermarketEntities())
+            {
+                var list = SPE.Employees.Where(x => x.Username == UserName.Text && x.Password == Pass.Password).ToList();
+                foreach (var Epm in list)
+                {
+                    Close();
+                    home.Show();
+                    return;
+                }
+
+                MessageBox.Show("username or password is incorrect!");
+            }
+
         }
 
         private void Pass_PasswordChanged(object sender, RoutedEventArgs e)

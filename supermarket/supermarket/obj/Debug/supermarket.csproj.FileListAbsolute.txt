@@ -15,3 +15,10 @@ F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\supermarket.exe
 F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\supermarket.pdb
 F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\Home.g.cs
 F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\Home.baml
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\bin\Debug\EntityFramework.dll
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\bin\Debug\EntityFramework.SqlServer.dll
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\bin\Debug\EntityFramework.xml
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\bin\Debug\EntityFramework.SqlServer.xml
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\bin\Debug\de\EntityFramework.resources.dll
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\supermarket_Content.g.cs
+F:\Arbeit\projekt\Dritte\supermarket\supermarket\obj\Debug\supermarket.csproj.CopyComplete

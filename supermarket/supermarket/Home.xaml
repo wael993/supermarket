@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:supermarket"
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="vater">
         <Grid x:Name="Home_Grid" Visibility="Hidden">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -93,9 +93,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Item" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
-                <TextBox Grid.Row="1" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom" IsReadOnly="True" Margin="0,5,20,0"/>
+                <TextBox Text="{Binding /Billing_id}" Grid.Row="1" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom"  Margin="0,5,20,0"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Price" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
-                <TextBox Grid.Row="3" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom" IsReadOnly="True" Margin="0,5,20,0"/>
+                <TextBox Text="{Binding Item.Price}" Grid.Row="3" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom" IsReadOnly="True" Margin="0,5,20,0"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="Quantity" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
                 <TextBox Grid.Row="1" Grid.Column="1" x:Name="Qu" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="Client Name" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
@@ -104,10 +104,27 @@
                 <Button Content="Reset" Grid.Row="4" Grid.Column="1" Margin="20,5,20,0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
 
 
+           
+
+
+
             </Grid>
 
-
-            <ListView Grid.Row="2"  Grid.Column="0" BorderThickness="2" Margin="2,5,20,2"
+            <DataGrid Grid.Row="2"  Grid.Column="0" BorderThickness="2" Margin="2,5,20,2"   Background="Transparent"
+                ItemsSource="{Binding }"
+                      x:Name="Bestellungq"
+                      IsSynchronizedWithCurrentItem="True"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      MouseDoubleClick="Bestellung_MouseDoubleClick">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Billing ID" Binding="{Binding Billing_id}" Width="*"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Item.Item_Name}" Width="*"/>
+                    <DataGridTextColumn Header="Anzahl" Binding="{Binding Qu}" Width="*"/>
+                    <DataGridTextColumn Header="Preis" Binding="{Binding Item.Price}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <!--<ListView Grid.Row="2"  Grid.Column="0" BorderThickness="2" Margin="2,5,20,2"
                   x:Name="LV_New_Billing" 
                   IsSynchronizedWithCurrentItem="True"
                   ItemsSource="{Binding }" SelectedIndex="1"
@@ -127,7 +144,7 @@
                         </TextBlock>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
 
 
             <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
@@ -140,6 +157,7 @@
             <DataGrid Grid.Row="0" Background="Transparent"
                 ItemsSource="{Binding }"
                       x:Name="Bestellung"
+                      IsSynchronizedWithCurrentItem="True"
                       AutoGenerateColumns="False"
                       IsReadOnly="True"
                       MouseDoubleClick="Bestellung_MouseDoubleClick">

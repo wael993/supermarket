@@ -28,6 +28,7 @@ namespace supermarket
             InitializeComponent();
             ctx.Billing.Load();
             icollectionwiew = CollectionViewSource.GetDefaultView(ctx.Billing.Local);
+            vater.DataContext = icollectionwiew;
             //ctx.Billing.Load();
             //New_Billing_Grid.DataContext = ctx.Billing.ToList();
             //Bestellung.DataContext = ctx.Billing.ToList();
@@ -48,7 +49,7 @@ namespace supermarket
             Item_Mang_Grid.Visibility = Visibility.Hidden;
             ctx.Billing.Load();
             Bestellung.DataContext = ctx.Billing.ToList();
-            LV_New_Billing.DataContext = ctx.Item.ToList();
+            //LV_New_Billing.DataContext = ctx.Item.ToList();
         }
         private void Employees_Mang_Click(object sender, RoutedEventArgs e)
         {

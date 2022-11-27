@@ -24,16 +24,16 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Welcome in Uper Markt" VerticalAlignment="Top"  HorizontalAlignment="Center"  FontSize="23" FontWeight="Bold" Foreground="#0FDC0F" />
         <WrapPanel Grid.Row="2" Grid.Column="1">
             <TextBlock  Text="User Name"  Width="124" FontSize="22"  FontWeight="Medium" Foreground="#626C62"/>
-            <TextBox x:Name="UserName" FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" GotFocus="UserName_GotFocus" Width="203"/>
+            <TextBox x:Name="UserName" FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  Width="203"/>
         </WrapPanel >
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Pass Word" FontSize="22" FontWeight="Medium" Foreground="#626C62" Margin="0,0,257,0"/>
-        <PasswordBox Grid.Row="3" Grid.Column="1" x:Name="Pass"  FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" GotFocus="Pass_GotFocus" Margin="124,0,36,12"  PasswordChanged="Pass_PasswordChanged" />
+        <PasswordBox Grid.Row="3" Grid.Column="1" x:Name="Pass"  FontSize="22"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"  Margin="124,0,36,12"  PasswordChanged="Pass_PasswordChanged" />
         <TextBox Grid.Row="3" Grid.Column="1" Name="PasswordUnmask" FontSize="22" Visibility="Hidden" Margin="125,0,0,13" HorizontalAlignment="Left" Width="202" />
 
 
-        <Button Grid.Column="1" x:Name="LogIn" Grid.Row="4" Content="Login"  FontSize="26" FontWeight="Bold" Background="#0FDC0F" Foreground="#626C62" BorderThickness="0"  Margin="20,0,20,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LogIn_Click"/>
-        <CheckBox  Content="Show Password" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Margin="1,1,10,1"></CheckBox>
-
+        <Button Grid.Column="1" x:Name="LogIn" Grid.Row="4" Content="Login"  FontSize="26" FontWeight="Bold" Background="#0FDC0F" Foreground="#626C62" BorderThickness="0"  Margin="20,0,20,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LogIn_Click" />
+        <Image x:Name="Showpass" Source="F:\Arbeit\projekt\3_Dritte\Foto\Show1.png" Grid.Column="1" Margin="293,3,39,16" Grid.Row="3" MouseDown="Showpass_MouseDown"/>
+        <Image x:Name="hidpass" Source="F:\Arbeit\projekt\3_Dritte\Foto\Hiddpass1.png" Grid.Column="1" Margin="300,3,32,16" Grid.Row="3" MouseDown="hidpass_MouseDown" Visibility="Hidden"/>
         <TextBlock Text="Made by: Wael Zobani" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="1,1,10,1"/>
 
     </Grid>

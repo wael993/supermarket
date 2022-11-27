@@ -28,9 +28,9 @@ namespace supermarket
             InitializeComponent();
             ctx.Billing.Load();
             icollectionwiew = CollectionViewSource.GetDefaultView(ctx.Billing.Local);
-
-
-
+            //ctx.Billing.Load();
+            //New_Billing_Grid.DataContext = ctx.Billing.ToList();
+            //Bestellung.DataContext = ctx.Billing.ToList();
         }
         private void Home_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +46,9 @@ namespace supermarket
             Home_Grid.Visibility = Visibility.Hidden;
             New_Billing_Grid.Visibility = Visibility.Visible;
             Item_Mang_Grid.Visibility = Visibility.Hidden;
-
+            ctx.Billing.Load();
+            Bestellung.DataContext = ctx.Billing.ToList();
+            LV_New_Billing.DataContext = ctx.Item.ToList();
         }
         private void Employees_Mang_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +56,8 @@ namespace supermarket
             New_Billing_Grid.Visibility = Visibility.Hidden;
             Employees_Mang_Grid.Visibility = Visibility.Visible;
             Item_Mang_Grid.Visibility = Visibility.Hidden;
+            ctx.Employees.Load();
+            Emp_mang.DataContext = ctx.Employees.ToList();
         }
         private void Items_Mang_Click(object sender, RoutedEventArgs e)
         {
@@ -61,6 +65,8 @@ namespace supermarket
             Home_Grid.Visibility = Visibility.Hidden;
             New_Billing_Grid.Visibility = Visibility.Hidden;
             Employees_Mang_Grid.Visibility = Visibility.Hidden;
+            ctx.Item.Load();
+            Item_Mang.DataContext = ctx.Item.ToList();
         }
         private void LV_New_Billing_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

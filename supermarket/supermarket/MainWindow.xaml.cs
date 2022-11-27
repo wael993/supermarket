@@ -20,19 +20,34 @@ namespace supermarket
     /// </summary>
     public partial class MainWindow : Window
     {
+       
+
         Home home = new Home();
         public MainWindow()
         {
             InitializeComponent();
         }
-
-        private void UserName_GotFocus(object sender, RoutedEventArgs e)
+        private void Pass_PasswordChanged(object sender, RoutedEventArgs e)
         {
-
+            PasswordUnmask.Text = Pass.Password;
         }
 
-        private void Pass_GotFocus(object sender, RoutedEventArgs e)
+
+
+        private void Showpass_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            PasswordUnmask.Visibility = Visibility.Visible;
+            Pass.Visibility = Visibility.Hidden;
+            Showpass.Visibility = Visibility.Hidden;
+            hidpass.Visibility = Visibility.Visible;
+        }
+
+        private void hidpass_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PasswordUnmask.Visibility = Visibility.Hidden;
+            Pass.Visibility = Visibility.Visible;
+            Showpass.Visibility = Visibility.Visible;
+            hidpass.Visibility = Visibility.Hidden;
 
         }
 
@@ -53,21 +68,6 @@ namespace supermarket
 
         }
 
-        private void Pass_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            PasswordUnmask.Text = Pass.Password;
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            PasswordUnmask.Visibility = Visibility.Visible;
-            Pass.Visibility = Visibility.Hidden;
-        }
-
-        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            PasswordUnmask.Visibility = Visibility.Hidden;
-            Pass.Visibility = Visibility.Visible;
-        }
+   
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800">
     <Grid>
-        <Grid x:Name="Home_Grid" Visibility="Visible">
+        <Grid x:Name="Home_Grid" Visibility="Hidden">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -64,7 +64,7 @@
         </Grid>
 
 
-        <Grid x:Name="New_Billing_Grid" Visibility="Hidden">
+        <Grid x:Name="New_Billing_Grid" Visibility="Visible">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -97,7 +97,7 @@
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Price" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
                 <TextBox Grid.Row="3" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom" IsReadOnly="True" Margin="0,5,20,0"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="Quantity" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
-                <TextBox Grid.Row="1" Grid.Column="1" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="Qu" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="Client Name" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
                 <TextBox Grid.Row="3" Grid.Column="1" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0"/>
                 <Button  Content="Add to Bill" Grid.Row="4" Grid.Column="0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Margin="20,5,20,0"/>
@@ -115,13 +115,14 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextBlock>                   
-                                <Run Text="{Binding Produkt_ID}"/>
+                                <Run Text="{Binding Item_ID}"/>
                                 <Run Text=" - "/>
-                                <Run Text="{Binding Produkt_Name}"/>
+                                <Run Text="{Binding Item_Name}"/>
                                 <Run Text=" - "/>
-                                <Run Text="{Binding Preis}"/>
-                                <Run Text="("/>
-                                <Run Text="{Binding Beschreibung}"/>
+                                <Run Text="{Binding Price}"/>
+                                <Run Text="€"/>
+                                <Run Text="       ("/>
+                                <Run Text="{Binding Quantity}"/>
                                 <Run Text=")"/>
                         </TextBlock>
                     </DataTemplate>
@@ -138,15 +139,15 @@
 
             <DataGrid Grid.Row="0" Background="Transparent"
                 ItemsSource="{Binding }"
-                      Name="Bestellung"
+                      x:Name="Bestellung"
                       AutoGenerateColumns="False"
                       IsReadOnly="True"
                       MouseDoubleClick="Bestellung_MouseDoubleClick">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Produkt ID" Binding="{Binding Speise.Produkt_ID}" Width="*"/>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Speise.Produkt_Name}" Width="*"/>
-                    <DataGridTextColumn Header="Anzahl" Binding="{Binding Anzahl}" Width="*"/>
-                    <DataGridTextColumn Header="Preis" Binding="{Binding Speise.Preis}" Width="*"/>
+                        <DataGridTextColumn Header="Billing ID" Binding="{Binding Billing_id}" Width="*"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Item.Item_Name}" Width="*"/>
+                        <DataGridTextColumn Header="Anzahl" Binding="{Binding Qu}" Width="*"/>
+                        <DataGridTextColumn Header="Preis" Binding="{Binding Item.Price}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
                 <StackPanel Grid.Row="1">
@@ -201,17 +202,17 @@
 
             <DataGrid Grid.Row="4" Grid.ColumnSpan="4"
                       Background="Transparent"
-                ItemsSource="{Binding }"
-                    
+                      ItemsSource="{Binding }"
+                      x:Name="Emp_mang"   
                       AutoGenerateColumns="False"
                       IsReadOnly="True"
                       MouseDoubleClick="Bestellung_MouseDoubleClick">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="EmpID" Binding="{Binding Speise.Produkt_ID}" Width="*"/>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Speise.Produkt_Name}" Width="*"/>
-                    <DataGridTextColumn Header="Phone" Binding="{Binding Anzahl}" Width="*"/>
-                    <DataGridTextColumn Header="Address" Binding="{Binding Speise.Preis}" Width="*"/>
-                    <DataGridTextColumn Header="Password" Binding="{Binding Speise.Preis}" Width="*"/>
+                    <DataGridTextColumn Header="EmpID" Binding="{Binding Employee_id}" Width="*"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding LastName}" Width="*"/>
+                    <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="*"/>
+                    <DataGridTextColumn Header="Address" Binding="{Binding Adress}" Width="*"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Password}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -256,15 +257,15 @@
         <DataGrid Grid.Row="4" Grid.ColumnSpan="4"
                       Background="Transparent"
                 ItemsSource="{Binding }"
-                    
+                    x:Name="Item_Mang"
                       AutoGenerateColumns="False"
                       IsReadOnly="True"
                       MouseDoubleClick="Bestellung_MouseDoubleClick">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ItemID" Binding="{Binding Speise.Produkt_ID}" Width="*"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Speise.Produkt_Name}" Width="*"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding Anzahl}" Width="*"/>
-                <DataGridTextColumn Header="Quantity" Binding="{Binding Speise.Preis}" Width="*"/>
+                    <DataGridTextColumn Header="ItemID" Binding="{Binding Item_ID}" Width="*"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Item_Name}" Width="*"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="*"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

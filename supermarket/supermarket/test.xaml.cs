@@ -21,9 +21,9 @@ namespace supermarket
     /// </summary>
     public partial class test : Window
     {
-        List<Billing_Item> Rechnungspositionen;
+        //List<Billing_Item> Rechnungspositionen;
 
-        private ICollectionView icollectionwiew;
+       // private ICollectionView icollectionwiew;
         supermarketEntities1 ctx = new supermarketEntities1();
         List<Billing_Item> BestellungAufnehmen_Rechnungsposten = new List<Billing_Item>();
 
@@ -104,15 +104,16 @@ namespace supermarket
             Bestellung.DataContext = null;
             Bestellung.DataContext = BestellungAufnehmen_Rechnungsposten;
         }
-        //private void Gesamt()
-        //{
-        //    decimal total = 0;
-        //    foreach (Billing_Item pos in BestellungAufnehmen_Rechnungsposten)
-        //    {
-        //        total += pos.Item.Price * pos.Quantity;
-        //    }
-        //    Rechnungskosten.Text = Convert.ToString(total);
-        //}
+        private void Gesamt()
+        {
+            decimal total = 0;
+            foreach (Billing_Item pos in BestellungAufnehmen_Rechnungsposten)
+            {
+                
+                //total += pos.Item.Price * pos.Quantity;
+            }
+            Rechnungskosten.Text = Convert.ToString(total);
+        }
         private void Button_ZumHauptmenü(object sender, RoutedEventArgs e)
         {
 

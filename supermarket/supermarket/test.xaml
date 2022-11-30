@@ -35,13 +35,13 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextBlock>                   
-                                <Run Text="{Binding Produkt_ID}"/>
+                                <Run Text="{Binding Item_ID}"/>
                                 <Run Text=" - "/>
-                                <Run Text="{Binding Produkt_Name}"/>
+                                <Run Text="{Binding Item_Name}"/>
                                 <Run Text=" - "/>
-                                <Run Text="{Binding Preis}"/>
+                                <Run Text="{Binding Price}"/>
                                 <Run Text="("/>
-                                <Run Text="{Binding Beschreibung}"/>
+                                <Run Text="{Binding Quantity}"/>
                                 <Run Text=")"/>
                         </TextBlock>
                     </DataTemplate>
@@ -63,10 +63,10 @@
                 <TextBox x:Name="Tischnummer"/>
                 <DataGrid ItemsSource="{Binding }" Name="Bestellung" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="Delete">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Produkt ID" Binding="{Binding Speise.Produkt_ID}" Width="*"/>
-                        <DataGridTextColumn Header="Name" Binding="{Binding Speise.Produkt_Name}" Width="*"/>
-                        <DataGridTextColumn Header="Anzahl" Binding="{Binding Anzahl}" Width="*"/>
-                        <DataGridTextColumn Header="Preis" Binding="{Binding Speise.Preis}" Width="*"/>
+                        <DataGridTextColumn Header="Produkt ID" Binding="{Binding Item.Item_ID}" Width="*"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Item.Item_Name}" Width="*"/>
+                        <DataGridTextColumn Header="Anzahl" Binding="{Binding Quantity}" Width="*"/>
+                        <DataGridTextColumn Header="Preis" Binding="{Binding Item.Price}" Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <TextBlock Text="Insgesamt:" Margin="5,0"/>

@@ -20,13 +20,13 @@ namespace supermarket
     /// </summary>
     public partial class MainWindow : Window
     {
-        test test = new test();
+      //  test test = new test();
        
 
         Home home = new Home();
         public MainWindow()
         {
-            test.Show();
+            home.Show();
             InitializeComponent();
         }
         private void Pass_PasswordChanged(object sender, RoutedEventArgs e)

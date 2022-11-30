@@ -20,11 +20,13 @@ namespace supermarket
     /// </summary>
     public partial class MainWindow : Window
     {
+        test test = new test();
        
 
         Home home = new Home();
         public MainWindow()
         {
+            test.Show();
             InitializeComponent();
         }
         private void Pass_PasswordChanged(object sender, RoutedEventArgs e)
@@ -53,7 +55,7 @@ namespace supermarket
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
-            using(supermarketEntities SPE =new supermarketEntities())
+            using(supermarketEntities1 SPE =new supermarketEntities1())
             {
                 var list = SPE.Employees.Where(x => x.Username == UserName.Text && x.Password == Pass.Password).ToList();
                 foreach (var Epm in list)

@@ -13,10 +13,10 @@ namespace supermarket
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class supermarketEntities : DbContext
+    public partial class supermarketEntities1 : DbContext
     {
-        public supermarketEntities()
-            : base("name=supermarketEntities")
+        public supermarketEntities1()
+            : base("name=supermarketEntities1")
         {
         }
     
@@ -26,6 +26,7 @@ namespace supermarket
         }
     
         public virtual DbSet<Billing> Billing { get; set; }
+        public virtual DbSet<Billing_Item> Billing_Item { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Item> Item { get; set; }

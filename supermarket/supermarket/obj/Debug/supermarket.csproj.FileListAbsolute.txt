@@ -46,3 +46,5 @@ F:\Arbeit\projekt\3_Dritte\supermarket\supermarket\obj\Debug\supermarket.csproj.
 F:\Arbeit\projekt\3_Dritte\supermarket\supermarket\obj\Debug\supermarket.csproj.CopyComplete
 F:\Arbeit\projekt\3_Dritte\supermarket\supermarket\obj\Debug\supermarket.exe
 F:\Arbeit\projekt\3_Dritte\supermarket\supermarket\obj\Debug\supermarket.pdb
+F:\Arbeit\projekt\3_Dritte\supermarket\supermarket\obj\Debug\test.g.cs
+F:\Arbeit\projekt\3_Dritte\supermarket\supermarket\obj\Debug\test.baml

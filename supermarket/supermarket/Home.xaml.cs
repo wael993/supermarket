@@ -22,7 +22,7 @@ namespace supermarket
     public partial class Home : Window
     {
         private ICollectionView icollectionwiew ;
-        supermarketEntities ctx = new supermarketEntities();
+        supermarketEntities1 ctx = new supermarketEntities1();
         public Home()
         {
             InitializeComponent();

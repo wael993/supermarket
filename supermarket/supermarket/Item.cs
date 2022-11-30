@@ -18,6 +18,7 @@ namespace supermarket
         public Item()
         {
             this.Billing = new HashSet<Billing>();
+            this.Billing_Item = new HashSet<Billing_Item>();
             this.Orders = new HashSet<Orders>();
         }
     
@@ -28,6 +29,8 @@ namespace supermarket
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Billing> Billing { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Billing_Item> Billing_Item { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
     }

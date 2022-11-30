@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="supermarketModel_1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="supermarketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Billing">
     <Key>
       <PropertyRef Name="Billing_id" />
@@ -9,9 +9,21 @@
     <Property Name="Customer_id" Type="Int32" />
     <Property Name="Item_ID" Type="Int32" />
     <Property Name="Employee_id" Type="Int32" />
+    <NavigationProperty Name="Billing_Item" Relationship="Self.fk_Billing" FromRole="Billing" ToRole="Billing_Item" />
     <NavigationProperty Name="Customer" Relationship="Self.fk_Customer" FromRole="Billing" ToRole="Customer" />
     <NavigationProperty Name="Employees" Relationship="Self.fk_Employees" FromRole="Billing" ToRole="Employees" />
     <NavigationProperty Name="Item" Relationship="Self.fk_Item_ID" FromRole="Billing" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="Billing_Item">
+    <Key>
+      <PropertyRef Name="Billing_Item_id" />
+    </Key>
+    <Property Name="Billing_Item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Billing_id" Type="Int32" />
+    <Property Name="Item_ID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Billing" Relationship="Self.fk_Billing" FromRole="Billing_Item" ToRole="Billing" />
+    <NavigationProperty Name="Item" Relationship="Self.fk_Item_" FromRole="Billing_Item" ToRole="Item" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -52,6 +64,7 @@
     <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Billing" Relationship="Self.fk_Item_ID" FromRole="Item" ToRole="Billing" />
+    <NavigationProperty Name="Billing_Item" Relationship="Self.fk_Item_" FromRole="Item" ToRole="Billing_Item" />
     <NavigationProperty Name="Orders" Relationship="Self.fk_Item" FromRole="Item" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Orders">
@@ -65,6 +78,18 @@
     <NavigationProperty Name="Employees" Relationship="Self.fk_Employee" FromRole="Orders" ToRole="Employees" />
     <NavigationProperty Name="Item" Relationship="Self.fk_Item" FromRole="Orders" ToRole="Item" />
   </EntityType>
+  <Association Name="fk_Billing">
+    <End Role="Billing" Type="Self.Billing" Multiplicity="0..1" />
+    <End Role="Billing_Item" Type="Self.Billing_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Billing">
+        <PropertyRef Name="Billing_id" />
+      </Principal>
+      <Dependent Role="Billing_Item">
+        <PropertyRef Name="Billing_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_Customer">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
     <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
@@ -101,6 +126,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_Item_">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="Billing_Item" Type="Self.Billing_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Item_ID" />
+      </Principal>
+      <Dependent Role="Billing_Item">
+        <PropertyRef Name="Item_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_Employee">
     <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -125,12 +162,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="supermarketEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="supermarketEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Billing" EntityType="Self.Billing" />
+    <EntitySet Name="Billing_Item" EntityType="Self.Billing_Item" />
     <EntitySet Name="Customer" EntityType="Self.Customer" />
     <EntitySet Name="Employees" EntityType="Self.Employees" />
     <EntitySet Name="Item" EntityType="Self.Item" />
     <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <AssociationSet Name="fk_Billing" Association="Self.fk_Billing">
+      <End Role="Billing" EntitySet="Billing" />
+      <End Role="Billing_Item" EntitySet="Billing_Item" />
+    </AssociationSet>
     <AssociationSet Name="fk_Customer" Association="Self.fk_Customer">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Billing" EntitySet="Billing" />
@@ -142,6 +184,10 @@
     <AssociationSet Name="fk_Item_ID" Association="Self.fk_Item_ID">
       <End Role="Item" EntitySet="Item" />
       <End Role="Billing" EntitySet="Billing" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Item_" Association="Self.fk_Item_">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Billing_Item" EntitySet="Billing_Item" />
     </AssociationSet>
     <AssociationSet Name="fk_Employee" Association="Self.fk_Employee">
       <End Role="Employees" EntitySet="Employees" />

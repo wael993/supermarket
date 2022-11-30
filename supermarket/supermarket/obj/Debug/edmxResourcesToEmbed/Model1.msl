@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="supermarketModel_1StoreContainer" CdmEntityContainer="supermarketEntities">
+  <EntityContainerMapping StorageEntityContainer="supermarketModelStoreContainer" CdmEntityContainer="supermarketEntities1">
     <EntitySetMapping Name="Billing">
-      <EntityTypeMapping TypeName="supermarketModel_1.Billing">
+      <EntityTypeMapping TypeName="supermarketModel.Billing">
         <MappingFragment StoreEntitySet="Billing">
           <ScalarProperty Name="Billing_id" ColumnName="Billing_id" />
           <ScalarProperty Name="Billing_date" ColumnName="Billing_date" />
@@ -12,8 +12,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Billing_Item">
+      <EntityTypeMapping TypeName="supermarketModel.Billing_Item">
+        <MappingFragment StoreEntitySet="Billing_Item">
+          <ScalarProperty Name="Billing_Item_id" ColumnName="Billing_Item_id" />
+          <ScalarProperty Name="Billing_id" ColumnName="Billing_id" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Customer">
-      <EntityTypeMapping TypeName="supermarketModel_1.Customer">
+      <EntityTypeMapping TypeName="supermarketModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
           <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -25,7 +35,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Employees">
-      <EntityTypeMapping TypeName="supermarketModel_1.Employees">
+      <EntityTypeMapping TypeName="supermarketModel.Employees">
         <MappingFragment StoreEntitySet="Employees">
           <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
           <ScalarProperty Name="Username" ColumnName="Username" />
@@ -42,7 +52,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Item">
-      <EntityTypeMapping TypeName="supermarketModel_1.Item">
+      <EntityTypeMapping TypeName="supermarketModel.Item">
         <MappingFragment StoreEntitySet="Item">
           <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
           <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
@@ -52,7 +62,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="supermarketModel_1.Orders">
+      <EntityTypeMapping TypeName="supermarketModel.Orders">
         <MappingFragment StoreEntitySet="Orders">
           <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
           <ScalarProperty Name="Order_date" ColumnName="Order_date" />

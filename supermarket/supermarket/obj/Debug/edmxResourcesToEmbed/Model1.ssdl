@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="supermarketModel_1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="supermarketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Billing">
     <Key>
       <PropertyRef Name="Billing_id" />
@@ -9,6 +9,15 @@
     <Property Name="Customer_id" Type="int" />
     <Property Name="Item_ID" Type="int" />
     <Property Name="Employee_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Billing_Item">
+    <Key>
+      <PropertyRef Name="Billing_Item_id" />
+    </Key>
+    <Property Name="Billing_Item_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Billing_id" Type="int" />
+    <Property Name="Item_ID" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -55,6 +64,18 @@
     <Property Name="Employee_id" Type="int" />
     <Property Name="Item_ID" Type="int" />
   </EntityType>
+  <Association Name="fk_Billing">
+    <End Role="Billing" Type="Self.Billing" Multiplicity="0..1" />
+    <End Role="Billing_Item" Type="Self.Billing_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Billing">
+        <PropertyRef Name="Billing_id" />
+      </Principal>
+      <Dependent Role="Billing_Item">
+        <PropertyRef Name="Billing_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_Customer">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
     <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
@@ -103,6 +124,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_Item_">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="Billing_Item" Type="Self.Billing_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="Item_ID" />
+      </Principal>
+      <Dependent Role="Billing_Item">
+        <PropertyRef Name="Item_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_Item_ID">
     <End Role="Item" Type="Self.Item" Multiplicity="0..1" />
     <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
@@ -115,12 +148,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="supermarketModel_1StoreContainer">
+  <EntityContainer Name="supermarketModelStoreContainer">
     <EntitySet Name="Billing" EntityType="Self.Billing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Billing_Item" EntityType="Self.Billing_Item" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_Billing" Association="Self.fk_Billing">
+      <End Role="Billing" EntitySet="Billing" />
+      <End Role="Billing_Item" EntitySet="Billing_Item" />
+    </AssociationSet>
     <AssociationSet Name="fk_Customer" Association="Self.fk_Customer">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Billing" EntitySet="Billing" />
@@ -136,6 +174,10 @@
     <AssociationSet Name="fk_Item" Association="Self.fk_Item">
       <End Role="Item" EntitySet="Item" />
       <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Item_" Association="Self.fk_Item_">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Billing_Item" EntitySet="Billing_Item" />
     </AssociationSet>
     <AssociationSet Name="fk_Item_ID" Association="Self.fk_Item_ID">
       <End Role="Item" EntitySet="Item" />

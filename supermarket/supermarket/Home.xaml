@@ -64,7 +64,7 @@
         </Grid>
 
 
-        <Grid x:Name="New_Billing_Grid" Visibility="Visible">
+        <Grid x:Name="New_Billing_Grid" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -181,7 +181,7 @@
         </Grid>
 
 
-        <Grid x:Name="Employees_Mang_Grid" Visibility="Hidden">
+        <Grid x:Name="Employees_Mang_Grid" Visibility="Visible">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -223,6 +223,7 @@
                       ItemsSource="{Binding }"
                       x:Name="Emp_mang"   
                       AutoGenerateColumns="False"
+                      IsSynchronizedWithCurrentItem="True"
                       IsReadOnly="True"
                       MouseDoubleClick="Bestellung_MouseDoubleClick">
                 <DataGrid.Columns>

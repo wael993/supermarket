@@ -26,7 +26,7 @@
 
         <Button x:Name="New_Billing" Grid.Column="0" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0" Click="New_Billing_Click">
             <StackPanel>
-                <Image Source="F:\Arbeit\projekt\Billing.png" Height="99" Width="99"/>
+                <Image Source="Img\Billing.png" Height="99" Width="99"/>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Run Text="New Billing" FontSize="15" FontWeight="Medium" Foreground="#B8C4C6" />
                 </TextBlock>
@@ -36,7 +36,7 @@
 
             <Button x:Name="Employees_Mang" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0" Click="Employees_Mang_Click">
             <StackPanel>
-                <Image Source="F:\Arbeit\projekt\Employee.png" Height="99" Width="99"/>
+                <Image Source="Img\Employee.png" Height="99" Width="99"/>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Run Text="Employees Mang" FontSize="15" FontWeight="Medium"  Foreground="#B8C4C6" />
                 </TextBlock>
@@ -45,7 +45,7 @@
         
         <Button x:Name="Items_Mang" Grid.Column="2" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0" Click="Items_Mang_Click">
             <StackPanel>
-                <Image Source="F:\Arbeit\projekt\Items.png" Height="99" Width="99"/>
+                <Image Source="Img\Items.png" Height="99" Width="99"/>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Run Text="Items Mang" FontSize="15" FontWeight="Medium" Foreground="#B8C4C6" />
                 </TextBlock>
@@ -54,7 +54,7 @@
         
         <Button Grid.Column="3" Grid.RowSpan="2" Grid.Row="1" Background="Snow" Margin="10,0,10,0">
             <StackPanel>
-                <Image Source="F:\Arbeit\projekt\Order.png" Height="99" Width="99"/>
+                <Image Source="Img\Order.png" Height="99" Width="99"/>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Run Text="New Order" FontSize="15" FontWeight="Medium" Foreground="#B8C4C6" />
                 </TextBlock>

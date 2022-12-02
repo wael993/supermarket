@@ -162,6 +162,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Img\Markt_Logo.png" />
+    <Resource Include="Img\Hiddpass1.png" />
+    <Resource Include="Img\Show1.png" />
+    <Resource Include="Img\Billing.png" />
+    <Resource Include="Img\Employee.png" />
+    <Resource Include="Img\Items.png" />
+    <Resource Include="Img\Order.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

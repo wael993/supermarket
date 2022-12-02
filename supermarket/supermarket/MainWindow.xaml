@@ -20,7 +20,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="F:\Arbeit\projekt\Markt_Logo.png" Grid.RowSpan="5" Margin="-63,9,214,2" Grid.ColumnSpan="2" Grid.Row="1" />
+        <Image Source="Img\Markt_Logo.png" Grid.RowSpan="5" Margin="-63,9,214,2" Grid.ColumnSpan="2" Grid.Row="1" />
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Welcome in Uper Markt" VerticalAlignment="Top"  HorizontalAlignment="Center"  FontSize="23" FontWeight="Bold" Foreground="#0FDC0F" />
         <WrapPanel Grid.Row="2" Grid.Column="1">
             <TextBlock  Text="User Name"  Width="124" FontSize="22"  FontWeight="Medium" Foreground="#626C62"/>
@@ -32,8 +32,8 @@
 
 
         <Button Grid.Column="1" x:Name="LogIn" Grid.Row="4" Content="Login"  FontSize="26" FontWeight="Bold" Background="#0FDC0F" Foreground="#626C62" BorderThickness="0"  Margin="20,0,20,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LogIn_Click" />
-        <Image x:Name="Showpass" Source="F:\Arbeit\projekt\3_Dritte\Foto\Show1.png" Grid.Column="1" Margin="293,3,39,16" Grid.Row="3" MouseDown="Showpass_MouseDown"/>
-        <Image x:Name="hidpass" Source="F:\Arbeit\projekt\3_Dritte\Foto\Hiddpass1.png" Grid.Column="1" Margin="300,3,32,16" Grid.Row="3" MouseDown="hidpass_MouseDown" Visibility="Hidden"/>
+        <Image x:Name="Showpass" Source="Img\Show1.png" Grid.Column="1" Margin="293,3,39,16" Grid.Row="3" MouseDown="Showpass_MouseDown"/>
+        <Image x:Name="hidpass" Source="Img\Hiddpass1.png" Grid.Column="1" Margin="300,3,32,16" Grid.Row="3" MouseDown="hidpass_MouseDown" Visibility="Hidden"/>
         <TextBlock Text="Made by: Wael Zobani" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="1,1,10,1"/>
 
     </Grid>

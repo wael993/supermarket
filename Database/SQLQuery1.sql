@@ -8,6 +8,9 @@ USE supermarket;
 go
 
 -- create tables
+IF OBJECT_ID('Billing_Item') IS NOT NULL
+  DROP TABLE Billing_Item;
+GO
 IF OBJECT_ID('Billing') IS NOT NULL
   DROP TABLE Billing;
 GO
@@ -87,6 +90,16 @@ CREATE TABLE Orders(
 );
 
 
+CREATE TABLE Billing_Item (
+	Billing_Item_id INT identity(9000,1) PRIMARY KEY,
+	Billing_id INT,
+	Item_ID INT NOT NULL,
+	Quantity INT NOT NULL,
+	CONSTRAINT fk_Item_ FOREIGN KEY (Item_ID)
+			REFERENCES Item(Item_ID),
+	CONSTRAINT fk_Billing FOREIGN KEY (Billing_id)
+			REFERENCES Billing(Billing_id)
+);
 
 
 INSERT INTO Employees(Username,Password,FirstName,LastName, Birthday,Gender,Salary,Rolle,Phone,Adress)
@@ -151,6 +164,6 @@ INSERT INTO Orders(Order_date,Employee_id,Item_ID)
 
 
 
-
+select * from Billing_Item
 
 			

@@ -26,7 +26,7 @@ namespace supermarket
         Home home = new Home();
         public MainWindow()
         {
-            home.Show();
+          //  home.Show();
             InitializeComponent();
         }
         private void Pass_PasswordChanged(object sender, RoutedEventArgs e)

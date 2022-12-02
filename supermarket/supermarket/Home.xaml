@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:supermarket"
         mc:Ignorable="d"
-        Title="Home" Height="450" Width="800">
+        Title="Home" Height="450" Width="1000">
     <Grid x:Name="vater">
         <Grid x:Name="Home_Grid" Visibility="Hidden">
         <Grid.ColumnDefinitions>
@@ -93,13 +93,16 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Item" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
-                <TextBox Text="{Binding Item_Name}" Grid.Row="1" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom"  Margin="0,5,20,0"/>
+                <TextBox Text="{Binding Item.Item_Name}" Grid.Row="1" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom"  Margin="0,5,20,0"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Price" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
-                <TextBox Text="{Binding Price}" Grid.Row="3" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom" IsReadOnly="True" Margin="0,5,20,0"/>
+                <TextBox Text="{Binding Item.Price}" Grid.Row="3" Grid.Column="0" FontSize="19" VerticalContentAlignment="Bottom" IsReadOnly="True" Margin="0,5,20,0"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="Quantity" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="Quantity" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="Quantity" Text="{Binding Item.Quantity}" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="Client Name" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
-                <TextBox x:Name="Coustemer_nr" Grid.Row="3" Grid.Column="1" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0"/>
+                <!--<ComboBox x:Name="Coustemer_nr" Grid.Row="3" Grid.Column="1" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0" Background="Snow" Text="{Binding LastName}">
+                   
+                </ComboBox>-->
+                <TextBox x:Name="Coustemer_nr" Grid.Row="3" Grid.Column="1" FontSize="19" VerticalContentAlignment="Bottom" Margin="0,5,20,0" Text="{Binding Customer.LastName}"/>
                 <Button  Content="Add to Bill" Grid.Row="4" Grid.Column="0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Margin="20,5,20,0" Click="Add_To_Bill_click"/>
                 <Button Content="Reset" Grid.Row="4" Grid.Column="1" Margin="20,5,20,0" Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center"/>
 
@@ -109,22 +112,34 @@
 
 
             </Grid>
-
-            <DataGrid Grid.Row="2"  Grid.Column="0" BorderThickness="2" Margin="2,5,20,2"   Background="Transparent"
+            <WrapPanel Grid.Row="2"  Grid.Column="0" Margin="2,5,20,2"   Background="Transparent">
+            <DataGrid  BorderThickness="2"
                 ItemsSource="{Binding }"
                       x:Name="LV_New_Billing"
-                      IsSynchronizedWithCurrentItem="True"
+                      IsSynchronizedWithCurrentItem="False"
                       AutoGenerateColumns="False"
-                      IsReadOnly="True"
+                      IsReadOnly="True" Width="264"
                      >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Item ID" Binding="{Binding Item_ID}" Width="*"/>
-                    <DataGridTextColumn Header="Item Name" Binding="{Binding Item_Name}" Width="*"/>
-                    <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="*"/>
-                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"/>
+                    <!--<DataGridTextColumn Header="Item ID" Binding="{Binding Item_ID}" Width="*"/>-->
+                        <DataGridTextColumn Header="Item Name" Binding="{Binding Item.Item_Name}" Width="*"/>
+                        <DataGridTextColumn Header="Price" Binding="{Binding Item.Price}" Width="*"/>
+                        <DataGridTextColumn Header="Quantity" Binding="{Binding Item.Quantity}" Width="*"/>
                 </DataGrid.Columns>
             </DataGrid>
-            
+                <DataGrid
+                     BorderThickness="2"
+                ItemsSource="{Binding }"
+                      x:Name="_LV_New_Billing"
+                      IsSynchronizedWithCurrentItem="True"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True" Width="110">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Coustmer Name" Binding="{Binding Customer.LastName}" Width="*"/>
+                       
+                    </DataGrid.Columns>
+                </DataGrid>
+            </WrapPanel>
             
             
             <!--<ListView Grid.Row="2"  Grid.Column="0" BorderThickness="2" Margin="2,5,20,2"
@@ -173,7 +188,7 @@
                     <Button  Content="Finish"   Background="#0BD6FA" Foreground="Snow" FontSize="19" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Width="120" Margin="5" Click="Finish_Click"/>
                 <WrapPanel>
                         <TextBlock Text="Total:" Margin="5,0" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA"/>
-                <TextBlock x:Name="Rechnungskosten"/>
+                        <TextBlock x:Name="Rechnungskosten" FontSize="19" Foreground="#0BD6FA"/>
                         <TextBlock  Text="€" VerticalAlignment="Bottom" FontSize="19" Foreground="#0BD6FA" />
                 </WrapPanel>
                 </StackPanel>

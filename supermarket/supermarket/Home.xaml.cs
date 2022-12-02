@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
@@ -24,11 +25,13 @@ namespace supermarket
         //private ICollectionView icollectionwiew ;
         supermarketEntities1 ctx = new supermarketEntities1();
         List<Billing_Item> Invoice_Item = new List<Billing_Item>();
-
+        List<Customer> customers_ = new List<Customer>();
+       
         public Home()
         {
             InitializeComponent();
-                        }
+
+        }
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             Employees_Mang_Grid.Visibility = Visibility.Hidden;
@@ -44,8 +47,9 @@ namespace supermarket
             New_Billing_Grid.Visibility = Visibility.Visible;
             Item_Mang_Grid.Visibility = Visibility.Hidden;
             ctx.Item.Load();
-            New_Billing_Grid.DataContext = ctx.Item.ToList();
+            New_Billing_Grid.DataContext = ctx.Billing.ToList();
             Invoice.DataContext = Invoice_Item;
+            //_LV_New_Billing.DataContext = customers_;
         }
         private void Employees_Mang_Click(object sender, RoutedEventArgs e)
         {
@@ -76,7 +80,7 @@ namespace supermarket
                 Invoice_Item.Remove(re);
             }
             re.Quantity--;
-            //  Gesamt();
+            Total_();
             Invoice.DataContext = null;
             Invoice.DataContext = Invoice_Item;
         }
@@ -88,10 +92,7 @@ namespace supermarket
             {
                 MessageBox.Show("Coustemer ID!");
             }
-            //else if (Quantity.Text == "")
-            //{
-            //    MessageBox.Show("Tischnummer!");
-            //}
+            
             else
             {
                 Billing NewBilling = new Billing();
@@ -117,13 +118,13 @@ namespace supermarket
         }
 
        
-        private void Gesamt()
+        private void Total_()
         {
             decimal total = 0;
             foreach (Billing_Item pos in Invoice_Item)
             {
 
-                //total += pos.Item.Price * pos.Quantity;
+                total +=Convert.ToDecimal(pos.Item.Price) * pos.Quantity;
             }
             Rechnungskosten.Text = Convert.ToString(total);
         }
@@ -143,7 +144,7 @@ namespace supermarket
                 re.Quantity = 1;
                 Invoice_Item.Add(re);
             }
-            //  Gesamt();
+            Total_();
             Invoice.DataContext = null;
             Invoice.DataContext = Invoice_Item;
         }

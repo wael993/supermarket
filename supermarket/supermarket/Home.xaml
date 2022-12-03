@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="1000">
     <Grid x:Name="vater">
-        <Grid x:Name="Home_Grid" Visibility="Hidden">
+        <Grid x:Name="Home_Grid" Visibility="Visible">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -64,7 +64,7 @@
         </Grid>
 
 
-        <Grid x:Name="New_Billing_Grid" Visibility="Visible">
+        <Grid x:Name="New_Billing_Grid" Visibility="Hidden">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -116,7 +116,7 @@
             <DataGrid  BorderThickness="2"
                 ItemsSource="{Binding }"
                       x:Name="LV_New_Billing"
-                      IsSynchronizedWithCurrentItem="False"
+                      IsSynchronizedWithCurrentItem="True"
                       AutoGenerateColumns="False"
                       IsReadOnly="True" Width="264"
                      >

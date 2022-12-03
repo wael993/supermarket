@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="supermarket.exe" version="1.0.0.0" publicKeyToken="9825043ed3b5f684" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="supermarket" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="supermarket.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC-Manifestoptionen
+          Wenn Sie die Zugangsebene für das Windows-Benutzerkonto ändern möchten, ersetzen Sie den 
+          requestedExecutionLevel-Knoten durch eines der folgenden Elemente.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Löschen Sie den requestedExecutionLevel-Knoten, wenn Sie 
+         zum Gewährleisten der Abwärtskompatibilität die Datei- und Registrierungsvirtualisierung verwenden möchten.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5225168">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nCD7KthqdgsMauvZMByQCYkdAq4UcgqTkmwLU1uK0Js=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="de\EntityFramework.resources.dll" size="387280">
+      <assemblyIdentity name="EntityFramework.resources" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="de" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>URRw1xUw80rLgUkVNq8aywljn2JfDELuaECszkPlDgo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="622288">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4OEmw7inupUB0D+Z1Upcu9F0vOy2FwCYq0zBIZ8n+TM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="supermarket.exe" size="1105360">
+      <assemblyIdentity name="supermarket" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>jh2ThBpCBQqtfQT344hQCVibchMPmdtZSuG4bHUYan0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Model1.Context.tt" size="22930">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iH6jRm/ArXOO/wVogKb8ZOaRJ6DvCC6vOswudwQkDnQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Model1.tt" size="25275">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>CabSpKm6yYNT6twBZzKHKM3v3aBYMgNzK0uSDYpHoWw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="supermarket.exe.config" size="1779">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>V/+NfJH6GPFbsdrYkErC+3O97iMUMSqwisIrmY/NDPE=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=ZOBANI\Wael_zobani" issuerKeyHash="93bd9494667e5a7b655cbccaa0915864899fbba3" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>kLYtZUc/uJFSjSV2STgpY58bb/UJHAypsLLSHE8vuI8=</DigestValue></Reference></SignedInfo><SignatureValue>Piueihmi744NydvrgYdmp+i8x3vq8Qw7IpLCoSUQUURcJcw1FkTWKpL2oEP7PxprPIzn+s5Dm7LnCvCuimLcWi7YMNoX33+s3agrXRRloXO59pFU/0iZSyyFtZflP+5qWGvlygIQRjqHorvMdAonCh8dXBVbjOUypBb4QaKTz6M=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>uFS04cBMDms81xX9shYcFLaKUkDgXMNAfqcntMGbzSVEMu3EzKYzJyUtEP3Y/EywJwBQlSTvTylse6vE7TW4diRvFfdK6qG0PbNfEyxssgy32pWkZ/ePrTQ2MF4Uemt/seCpkFGY0/cdjFJZADN50YlksExKGmGCvfa/IrDdQ0E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="8fb82f4f1cd2b2b0a90c1c09f56f1b9f6329384976258d5291b83f47652db690" Description="" Url=""><as:assemblyIdentity name="supermarket.exe" version="1.0.0.0" publicKeyToken="9825043ed3b5f684" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ZOBANI\Wael_zobani</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>75OyalGyzs54PjKJpooCyMBzAg1mF9V5Z+5YE2GVCHU=</DigestValue></Reference></SignedInfo><SignatureValue>NiYELuNo0ybj9VymlDFqjdtRJt+Pri2dkm1yjNQ9ADUK+4o8uBfDeEfR/6F/+0G+G92GRGlHxJJMK8XJ9+DeiD6IC7rLKGwiGGRGTsIomkpvVZtmj71+1ALxAQ63oDtQTKXNZFmUO3xhrHy6aiVjQBXfrrYAg1rvyv6CEhqp3gQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>uFS04cBMDms81xX9shYcFLaKUkDgXMNAfqcntMGbzSVEMu3EzKYzJyUtEP3Y/EywJwBQlSTvTylse6vE7TW4diRvFfdK6qG0PbNfEyxssgy32pWkZ/ePrTQ2MF4Uemt/seCpkFGY0/cdjFJZADN50YlksExKGmGCvfa/IrDdQ0E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQHrc0sO3IqLNFD3i3qeVfxDANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDHiQAWgBPAEIAQQBOAEkAXABXAGEAZQBsAF8AegBvAGIAYQBuAGkwHhcNMjIxMjAzMTUzNTQ0WhcNMjMxMjAzMjEzNTQ0WjAvMS0wKwYDVQQDHiQAWgBPAEIAQQBOAEkAXABXAGEAZQBsAF8AegBvAGIAYQBuAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALhUtOHATA5rPNcV/bIWHBS2ilJA4FzDQH6nJ7TBm80lRDLtxMymMyclLRD92PxMsCcAUJUk708pbHurxO01uHYkbxX3SuqhtD2zXxMsbLIMt9qVpGf3j600NjBeFHprf7HgqZBRmNP3HYxSWQAzedGJZLBMShphgr32vyKw3UNBAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAoa+6CviiLa6g/hy7tFrmaWU1D4n67qJibuNQ5cDhyojGRPs8zuaTeKQe6mMGW/mKa43IyH9OkMHzhObCyrF9QIZMXhhu3RdHlTvp258JINH9hztJh6u+HWd4mevzovAT/seeqmfsjzv2V0ezZ+H0W9LALBtVor8UJx7pDgxK0Rw=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
